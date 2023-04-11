@@ -9,9 +9,19 @@ export const changeState = (prop) => {
   };
 };
 
+// older version, current state set to empty
+// export const storeState = () => {
+//   let currentState = {}; 
+//   return (stateChangeFunction = state => state) => {
+//     const newState = stateChangeFunction(currentState);
+//     currentState = { ...newState };
+//     return newState;
+//   };
+// };
 
-export const storeState = () => {
-  let currentState = {}; 
+// updated version, current state set to 0,0,0
+export const storeState = (initial) => {
+  let currentState = initial; 
   return (stateChangeFunction = state => state) => {
     const newState = stateChangeFunction(currentState);
     currentState = { ...newState };
